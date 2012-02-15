@@ -1,0 +1,29 @@
+#+TITLE: Insect Bot Plan
+#+AUTHOR: J. Bromley <jbromley@gmail.com>
+#+DATE: February 13, 2012
+
+* Why?
+
+ - Create an insect bot with some personality.
+ - Use a variety of sensors.
+   - light sensors
+   - IR sensors
+   - ultrasonic sensors
+   - touch sensors
+   - tilt switches
+   - remote control
+ - Use a variety of outputs
+   - motors (obviously)
+   - LED matrix
+   - sound
+ - Become familiar with sumbsumption architectures on Arduino/AVR.
+
+* Outcome
+
+
+
+
+* Ideas
+
+* Project Plan
+
