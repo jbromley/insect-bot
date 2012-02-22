@@ -20,10 +20,63 @@
 
 * Outcome
 
-
-
+The outcome for this project is an autonomous walking insect. It should be
+able to avoid obstacles, either avoid or go towards light, avoid falling,
+respond to sound, provide sound feedback, and be remote controlled.
 
 * Ideas
 
+ - When obstructed, scan for the longest free path before proceeding.
+ - Add front feelers in case the bot gets to close to something for the
+   ultrasonic sensor to work.
+ - Add rear feelers to avoid crashing into walls while backing up.
+ - Create a PCB with a bare-bones Arduino and necessary circuitry.
+ - Add a third servo to pan the ultrasonic sensor left and right
+ - Add a tile switch and have the bot turn itself over if it is
+   upside-down.
+ - Add proximity sensors to the front legs so the bot doesn't go over
+   ledges.
+ - Add four photoresistors and have bot always go towards the brightest
+   light. When there is no light gradient, stop.
+ - Add a sound sensor and speed up briefly when there are loud sounds.
+ - Add an IR receiver and use a remote control to control modes.
+   * start/stop
+   * light adverse vs. light seeking
+   * simple control modes for directly controlling motion
+ - Add logic to detect when the robot has not moved for some time due to
+   an obstruction.
+ - Add a Perspex or HDPE plastic shell to the back of the bot.
+ - Add a piezo buzzer and emit sound to indicate events.
+   * Beep a tone when obstructions are detected - higher note means
+     smaller distance.
+   * Beep when an IR command is received.
+   * Add random chirps.
+   * Beep warning tones when upside down.
+   * Beep when stuck - i.e. when the robot cannot move.
+ - Add a PIR sensor and move when approached.
+ - Use a LiPo battery with a charging circuit.
+
 * Project Plan
+
+** Walking
+*** TODO Walk straight forward with less than 5% error.
+*** TODO Walk straight backwards with less than 5% error.
+*** TODO Turn right 90 degrees.
+*** TODO Turn left 90 degrees.
+*** TODO Turn right 90 degrees while moving backwards.
+*** TODO Turn left 90 degrees while moving backwards.
+** Ultrasonic sensor
+** Light avoidance/seeking
+** Touch sensors
+** Tilt sensor and self-righting
+** Remote control
+** Sound effects
+** PIR sensor
+** Stuck detection
+** Mechanical and electrical
+*** TODO Make brackets for BBB Arduino
+*** TODO Shrink wrap holding portion of brackets.
+*** TODO Fix brackets to body.
+*** TODO PCB for final circuitry.
+*** TODO Buy parts for hand-made Arduino.
 
