@@ -1,6 +1,7 @@
 #+TITLE: Insect Bot Plan
 #+AUTHOR: J. Bromley <jbromley@gmail.com>
 #+DATE: February 13, 2012
+#+TODO: TODO(t) IN_PROGRESS(i!) WAITING(w@/!) | DONE(d!) CANCELED(c@)
 
 * Why?
 
@@ -54,14 +55,16 @@ respond to sound, provide sound feedback, and be remote controlled.
    * Beep warning tones when upside down.
    * Beep when stuck - i.e. when the robot cannot move.
  - Add a PIR sensor and move when approached.
+ - Add an LED matrix "shield" that shows information about
+   operation. The shield should be removable and pertinent code
+   deactivated when the shield is not attached.
  - Use a LiPo battery with a charging circuit.
 
 * Project Plan
 
 ** Walking
-*** TODO Devise some method of wireless control for testing.
-*** TODO Check that the legs are centered and even.
-*** TODO Walk straight forward with less than 5% error.
+*** IN_PROGRESS Walk straight forward with less than 5% error.
+    - State "IN_PROGRESS" from "TODO"       [2012-02-23 Thu 15:40]
 *** TODO Walk straight backwards with less than 5% error.
 *** TODO Turn right 90 degrees.
 *** TODO Turn left 90 degrees.
@@ -69,19 +72,32 @@ respond to sound, provide sound feedback, and be remote controlled.
 *** TODO Turn left 90 degrees while moving backwards.
 *** TODO Test to see if the bot can be made to turn in-place.
 ** Ultrasonic sensor
-*** TODO Mount ultrasonic sensor to the body.
-*** TODO Modify ultrasonic code for HC-SR04 sensor.
+*** TODO Mount ultrasonic sensor.
+*** TODO Make connection cable for sensor.
+*** TODO Add object-avoidance code.
 ** Light avoidance/seeking
+*** TODO Test an analog subtraction circuit.
+*** TODO A digital comparison circuit based on a comparator.
+*** TODO Develop light-seeking/avoidance policy.
+*** TODO Implement light-responsive behavior.
 ** Touch sensors
 ** Tilt sensor and self-righting
 ** Remote control
+*** TODO Remote control test sketch.
+*** TODO Implement mode switching in bot.
 ** Sound effects
+*** TODO Develop mapping from actions to sound.
+*** TODO Code in sound behaviors.
 ** PIR sensor
 ** Stuck detection
 ** Mechanical and electrical
 *** TODO Make brackets for BBB Arduino
 *** TODO Shrink wrap holding portion of brackets.
 *** TODO Fix brackets to body.
-*** TODO PCB for final circuitry.
-*** TODO Buy parts for hand-made Arduino.
+*** TODO Circuit board for final circuitry.
+I plan to use an Arduino Pro Mini on either a perfboard or a dedicated
+etched PCB for the circuitry.
+*** TODO Design power circuit.
+*** TODO Investigate isolating servos from microcontroller.
+*** TODO Cut down servo cables to only length necessary to reach control board.
 
