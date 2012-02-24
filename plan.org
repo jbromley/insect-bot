@@ -59,13 +59,18 @@ respond to sound, provide sound feedback, and be remote controlled.
 * Project Plan
 
 ** Walking
+*** TODO Devise some method of wireless control for testing.
+*** TODO Check that the legs are centered and even.
 *** TODO Walk straight forward with less than 5% error.
 *** TODO Walk straight backwards with less than 5% error.
 *** TODO Turn right 90 degrees.
 *** TODO Turn left 90 degrees.
 *** TODO Turn right 90 degrees while moving backwards.
 *** TODO Turn left 90 degrees while moving backwards.
+*** TODO Test to see if the bot can be made to turn in-place.
 ** Ultrasonic sensor
+*** TODO Mount ultrasonic sensor to the body.
+*** TODO Modify ultrasonic code for HC-SR04 sensor.
 ** Light avoidance/seeking
 ** Touch sensors
 ** Tilt sensor and self-righting
