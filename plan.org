@@ -33,7 +33,7 @@ respond to sound, provide sound feedback, and be remote controlled.
  - Add rear feelers to avoid crashing into walls while backing up.
  - Create a PCB with a bare-bones Arduino and necessary circuitry.
  - Add a third servo to pan the ultrasonic sensor left and right
- - Add a tile switch and have the bot turn itself over if it is
+ - Add a tilt switch and have the bot turn itself over if it is
    upside-down.
  - Add proximity sensors to the front legs so the bot doesn't go over
    ledges.
@@ -97,7 +97,12 @@ respond to sound, provide sound feedback, and be remote controlled.
 *** TODO Circuit board for final circuitry.
 I plan to use an Arduino Pro Mini on either a perfboard or a dedicated
 etched PCB for the circuitry.
-*** TODO Design power circuit.
+*** DONE Design power circuit.
+    - State "DONE"       from "TODO"       [2012-02-24 Fri 16:48]
+I am modeling my circuit after SparkFun's [[http://www.sparkfun.com/products/114][Breadboard power supply]]. I
+should be able to eliminate the power jack and voltage-setting resistors
+and use a 7805 instead of the LM317.
+*** TODO Build power circuit
 *** TODO Investigate isolating servos from microcontroller.
 *** TODO Cut down servo cables to only length necessary to reach control board.
 
