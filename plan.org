@@ -102,7 +102,15 @@ etched PCB for the circuitry.
 I am modeling my circuit after SparkFun's [[http://www.sparkfun.com/products/114][Breadboard power supply]]. I
 should be able to eliminate the power jack and voltage-setting resistors
 and use a 7805 instead of the LM317.
+
+Further testing shows that the 2.5V dropout of the 7805 is not good for use
+with a 9V battery. It would be better to use the L4931 LDO regulator. I will
+have to check the current draw of the bot and solder an L4931 into the BBB.
+*** TODO Measure current draw of the bot.
+*** TODO Replace BBB 7805 with original L4931.
 *** TODO Build power circuit
 *** TODO Investigate isolating servos from microcontroller.
 *** TODO Cut down servo cables to only length necessary to reach control board.
-
+*** TODO Make the feet stickier.
+Currently the feet do not grip at all, slipping even on carpet. I need to
+find a way (hot glue? building feet?) to have the feet get better traction.
