@@ -75,9 +75,14 @@ respond to sound, provide sound feedback, and be remote controlled.
 *** TODO Mount ultrasonic sensor.
 *** TODO Make connection cable for sensor.
 *** TODO Add object-avoidance code.
+*** TODO Find sensor with most accurate response.
 ** Light avoidance/seeking
-*** TODO Test an analog subtraction circuit.
-*** TODO A digital comparison circuit based on a comparator.
+*** TODO [#C] Test an analog subtraction circuit.
+*** TODO [#C] A digital comparison circuit based on a comparator.
+*** TODO Test simple two photoresistor set up.
+Instead of trying to do this in hardware I have decided to do a first cut
+using simply two photoresistors and two analog inputs. Build a test circuit
+to see how well this works.
 *** TODO Develop light-seeking/avoidance policy.
 *** TODO Implement light-responsive behavior.
 ** Touch sensors
