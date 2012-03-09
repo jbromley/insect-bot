@@ -60,7 +60,7 @@ respond to sound, provide sound feedback, and be remote controlled.
    deactivated when the shield is not attached.
  - Use a LiPo battery with a charging circuit.
 
-* Project Plan
+* Project Plan [5/37]
 
 ** Walking
 *** IN_PROGRESS Walk straight forward with less than 5% error.
@@ -79,7 +79,8 @@ respond to sound, provide sound feedback, and be remote controlled.
 ** Light avoidance/seeking
 *** TODO [#C] Test an analog subtraction circuit.
 *** TODO [#C] A digital comparison circuit based on a comparator.
-*** TODO Test simple two photoresistor set up.
+*** DONE Test simple two photoresistor set up.
+    - State "DONE"       from "TODO"       [2012-03-09 Fri 01:03]
 Instead of trying to do this in hardware I have decided to do a first cut
 using simply two photoresistors and two analog inputs. Build a test circuit
 to see how well this works.
@@ -102,8 +103,7 @@ to see how well this works.
 *** TODO Circuit board for final circuitry.
 I plan to use an Arduino Pro Mini on either a perfboard or a dedicated
 etched PCB for the circuitry.
-*** DONE Design power circuit.
-    - State "DONE"       from "TODO"       [2012-02-24 Fri 16:48]
+*** TODO Design power circuit.
 I am modeling my circuit after SparkFun's [[http://www.sparkfun.com/products/114][Breadboard power supply]]. I
 should be able to eliminate the power jack and voltage-setting resistors
 and use a 7805 instead of the LM317.
@@ -111,11 +111,35 @@ and use a 7805 instead of the LM317.
 Further testing shows that the 2.5V dropout of the 7805 is not good for use
 with a 9V battery. It would be better to use the L4931 LDO regulator. I will
 have to check the current draw of the bot and solder an L4931 into the BBB.
-*** TODO Measure current draw of the bot.
-*** TODO Replace BBB 7805 with original L4931.
+*** DONE Measure current draw of the bot.
+    - State "DONE"       from "TODO"       [2012-03-05 Mon 22:24]
+I check the bot with the normal speed gait and found it to use between 370
+and 580 mA of current. The L4931 can only deliver 250 mA so it is not a
+viable choice for a voltage regulator. This test was done with the DC
+adapter set to provide 9V in. It nominally provides 9.13 V open-circuit and
+8.38 V to 8.98 V loaded.
+*** DONE Replace BBB 7805 with original L4931.
+    - State "DONE"       from "TODO"       [2012-03-01 Thu 22:00]
+I swapped out the 7805 for the L4931 that came with the BBB, hoping the
+lower dropout voltage would give better performance but it appears the L4931
+cannot source enough current (only up to 250 mA) for the robot to work
+properly. I will try using the RBBB with the 7805.
+*** DONE Place straight programming pins on the RBBB.
+    - State "DONE"       from "TODO"       [2012-03-05 Mon 22:07]
+*** CANCELED Place female header blocks on the RBBB.
+    - State "CANCELED"   from "TODO"       [2012-03-05 Mon 22:08]
+      I ended up not doing this because putting on female headers would obscure
+      the labels for all the pins and so make it difficult to hook up any circuits.
+*** TODO Make a servo connection block.
+The servo connection block is a 2x3 block of male header pins. There are two
+pins for Vcc, two pins for ground, and a control pin for each servo.
 *** TODO Build power circuit
 *** TODO Investigate isolating servos from microcontroller.
 *** TODO Cut down servo cables to only length necessary to reach control board.
 *** TODO Make the feet stickier.
 Currently the feet do not grip at all, slipping even on carpet. I need to
 find a way (hot glue? building feet?) to have the feet get better traction.
+*** TODO Bend PVC into a circuit board holder.
+*** TODO Make a flat plastic sheet out of polystyrene.
+*** TODO Form polystyrene sheet into a circuit board holder.
+
