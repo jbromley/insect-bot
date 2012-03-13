@@ -60,7 +60,7 @@ respond to sound, provide sound feedback, and be remote controlled.
    deactivated when the shield is not attached.
  - Use a LiPo battery with a charging circuit.
 
-* Project Plan [5/37]
+* Project Plan [8/39]
 
 ** Walking
 *** IN_PROGRESS Walk straight forward with less than 5% error.
@@ -77,17 +77,27 @@ respond to sound, provide sound feedback, and be remote controlled.
 *** TODO Add object-avoidance code.
 *** TODO Find sensor with most accurate response.
 ** Light avoidance/seeking
-*** TODO [#C] Test an analog subtraction circuit.
-*** TODO [#C] A digital comparison circuit based on a comparator.
+*** CANCELED [#C] Test an analog subtraction circuit.
+    - State "CANCELED"   from "TODO"       [2012-03-13 Tue 01:32] \\
+      Instead of doing light subtraction in hardware I will just use the analog 
+      ports and do the comparison digitally.
+*** CANCELED [#C] A digital comparison circuit based on a comparator.
+    - State "CANCELED"   from "TODO"       [2012-03-13 Tue 01:32] \\
+      Decided to not use a comparator to determine light direction.
 *** DONE Test simple two photoresistor set up.
     - State "DONE"       from "TODO"       [2012-03-09 Fri 01:03]
-Instead of trying to do this in hardware I have decided to do a first cut
-using simply two photoresistors and two analog inputs. Build a test circuit
-to see how well this works.
+Tested two photoresistors connected to Arduino analog inputs. This
+configuration seems to work well enough, though the dynamic range of the
+response is limited.
 *** TODO Develop light-seeking/avoidance policy.
 *** TODO Implement light-responsive behavior.
 ** Touch sensors
 ** Tilt sensor and self-righting
+*** DONE Test tilt sensors
+    - State "DONE"       from "TODO"       [2012-03-13 Tue 01:34]
+Tested a two photoresistors read by two analog ports. This seems to work
+well enough.
+*** TODO Figure out how to right the robot from its back.
 ** Remote control
 *** TODO Remote control test sketch.
 *** TODO Implement mode switching in bot.
