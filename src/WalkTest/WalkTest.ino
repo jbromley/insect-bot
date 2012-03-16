@@ -7,6 +7,7 @@
  * D3 - rear servo control
  */
 #include <Servo.h>
+#include <IRremote.h>
 
 // The number of steps in a gait. There are four steps: movement 1, 
 // center, movement 2, and center. Each step has to move both the 
@@ -21,7 +22,7 @@ const float TIME_SCALE = 1.0f;
 
 // Types of movements. These index into the gaits array.
 enum WalkType {
-  FORWARD, BACKWARD, LEFT, RIGHT, BACK_LEFT, BACK_RIGHT, NUM_GAITS
+  FORWARD, BACKWARD, LEFT, RIGHT, BACK_LEFT, BACK_RIGHT, NUM_GAITS, STOP
 };
 
 // The gait positions.
@@ -33,6 +34,9 @@ char gaits[][GAIT_STEPS] = {
   { -18, -21, 0, -6, 27, 9, 0, 0 },
   { 18, 21, 0, 6, -27, -9, 0, 0 }
 };
+
+// Walking mode.
+WalkType walkMode = STOP;
 
 // Delays between each of the four gait steps and the delay between
 // each gait cycle.
@@ -47,8 +51,16 @@ const char FRONT_CENTER = 86;
 const char REAR_CENTER = 82;
 
 // Servo controllers
+const int FRONT_SERVO_PIN = 2;
+const int REAR_SERVO_PIN = 3;
 Servo frontServo;
 Servo rearServo;
+
+// IR Receiver
+const int IR_RECV_PIN = 4; 
+IRrecv irrecv(IR_RECV_PIN);
+decode_results results;
+
 
 void setup()
 {
@@ -68,8 +80,12 @@ void setup()
     delays[i] = static_cast<int>(TIME_SCALE * delays[i]);
   }
 
-  frontServo.attach(2);
-  rearServo.attach(3);
+  // Set up servos.
+  frontServo.attach(FRONT_SERVO_PIN);
+  rearServo.attach(REAR_SERVO_PIN);
+
+  // Set up IR receiver.
+  irrecv.enableIRIn();
 }
 
 void move(WalkType walk)
@@ -84,6 +100,39 @@ void move(WalkType walk)
 
 void loop()
 {
-  move(FORWARD);
-  delay(STRIDE_DELAY);
+  if (irrecv.decode(&results)) {
+    switch (results.value) {
+    case 0xFF18E7:
+      // Forward
+      walkMode = FORWARD;
+      break;
+    case 0xFF30CF:
+      walkMode = LEFT;
+      break;
+    case 0xFF7A85:
+      walkMode = RIGHT;
+      break;
+    case 0xFF38C7:
+      walkMode = STOP;
+      break;
+    case 0xFF42BD:
+      walkMode = BACK_LEFT;
+      break;
+    case 0xFF4AB5:
+      walkMode = BACKWARD;
+      break;
+    case 0xFF52AD:
+      walkMode = BACK_RIGHT;
+      break;
+    default:
+      // Do nothing.
+      break;
+    }
+    
+    irrecv.resume();
+  }
+
+  if (walkMode != STOP) {
+    move(walkMode);
+  }
 }
