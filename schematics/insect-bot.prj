@@ -1,0 +1,4 @@
+elements-dir ./footprints
+elements-dir /usr/local/share/pcb/lib/jcl
+schematics insect-bot.sch
+output-name insect-bot
