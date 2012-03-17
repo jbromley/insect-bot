@@ -60,7 +60,7 @@ respond to sound, provide sound feedback, and be remote controlled.
    deactivated when the shield is not attached.
  - Use a LiPo battery with a charging circuit.
 
-* Project Plan [8/39]
+* Project Plan [9/39]
 
 ** Walking
 *** IN_PROGRESS Walk straight forward with less than 5% error.
@@ -113,7 +113,8 @@ well enough.
 *** TODO Circuit board for final circuitry.
 I plan to use an Arduino Pro Mini on either a perfboard or a dedicated
 etched PCB for the circuitry.
-*** TODO Design power circuit.
+*** DONE Design power circuit.
+    - State "DONE"       from "TODO"       [2012-03-16 Fri 00:57]
 I am modeling my circuit after SparkFun's [[http://www.sparkfun.com/products/114][Breadboard power supply]]. I
 should be able to eliminate the power jack and voltage-setting resistors
 and use a 7805 instead of the LM317.
@@ -121,6 +122,10 @@ and use a 7805 instead of the LM317.
 Further testing shows that the 2.5V dropout of the 7805 is not good for use
 with a 9V battery. It would be better to use the L4931 LDO regulator. I will
 have to check the current draw of the bot and solder an L4931 into the BBB.
+
+I have decided to use 6 AA rechargeables to provide 7.2V. A diode will drop
+this to 6.1V for direct use by the servos. The 6.1V will be fed to a LDO
+regulator to drive the Arduino and other circuitry.
 *** DONE Measure current draw of the bot.
     - State "DONE"       from "TODO"       [2012-03-05 Mon 22:24]
 I check the bot with the normal speed gait and found it to use between 370
