@@ -62,15 +62,15 @@ numslots=0
 3		io	line	l		RST
 4		pwr	none		GND	
 5		io	line	r		D2
-6		io	line	r		D3
-7		io	line	r		D4
-8		io	line	r		D5
-9		io	line	r		D6
+6		io	line	r		D3 (~)
+7		io	line	r		D4 
+8		io	line	r		D5 (~)
+9		io	line	r		D6 (~)
 10		io	line	r		D7
 11		io	line	r		D8
-12		io	line	r		D9
-13		io	line	r		D10
-14		io	line	r		D11
+12		io	line	r		D9 (~)
+13		io	line	r		D10 (~)
+14		io	line	r		D11 (~)
 15		io	line	r		D12
 16		io	line	r		D13
 17		io	line 	l		A0
