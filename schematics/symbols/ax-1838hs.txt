@@ -57,6 +57,6 @@ numslots=0
 #-----------------------------------------------------
 #pinnr	seq	type	style	posit.	net	label	
 #-----------------------------------------------------
-1	1	io	line	r		OUT
-2	2	pwr	line	r	Vcc	Vcc	
-3	3	pwr	line	r	GND	GND
+1		io	line	r		OUT
+2		pwr	line	r	Vcc	Vcc	
+3		pwr	line	r	GND	GND
