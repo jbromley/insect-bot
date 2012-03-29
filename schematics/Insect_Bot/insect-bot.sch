@@ -3008,6 +3008,26 @@ SMD Buzzer&lt;br&gt;
 <hole x="-3.9" y="-2.25" drill="0.8"/>
 <hole x="2.25" y="3.9" drill="0.8"/>
 </package>
+<package name="STAND-OFF">
+<description>&lt;b&gt;Stand Off&lt;/b&gt;&lt;p&gt;
+This is the mechanical footprint for a #4 phillips button head screw. Use the keepout ring to avoid running the screw head into surrounding components. SKU : PRT-00447</description>
+<wire x1="0" y1="1.8542" x2="0" y2="-1.8542" width="0.2032" layer="41" curve="-180"/>
+<wire x1="0" y1="-1.8542" x2="0" y2="1.8542" width="0.2032" layer="41" curve="-180"/>
+<wire x1="0" y1="-1.8542" x2="0" y2="1.8542" width="0.2032" layer="42" curve="180"/>
+<wire x1="0" y1="-1.8542" x2="0" y2="1.8542" width="0.2032" layer="42" curve="-180"/>
+<circle x="0" y="0" radius="2.794" width="0.127" layer="39"/>
+<hole x="0" y="0" drill="3.302"/>
+</package>
+<package name="STAND-OFF-TIGHT">
+<description>&lt;b&gt;Stand Off&lt;/b&gt;&lt;p&gt;
+This is the mechanical footprint for a #4 phillips button head screw. Use the keepout ring to avoid running the screw head into surrounding components. SKU : PRT-00447</description>
+<wire x1="0" y1="1.8542" x2="0" y2="-1.8542" width="0.2032" layer="41" curve="-180"/>
+<wire x1="0" y1="-1.8542" x2="0" y2="1.8542" width="0.2032" layer="41" curve="-180"/>
+<wire x1="0" y1="-1.8542" x2="0" y2="1.8542" width="0.2032" layer="42" curve="180"/>
+<wire x1="0" y1="-1.8542" x2="0" y2="1.8542" width="0.2032" layer="42" curve="-180"/>
+<circle x="0" y="0" radius="2.794" width="0.127" layer="39"/>
+<hole x="0" y="0" drill="3.048"/>
+</package>
 </packages>
 <symbols>
 <symbol name="TOGGLE">
@@ -3047,6 +3067,9 @@ SMD Buzzer&lt;br&gt;
 <text x="6.35" y="0" size="1.778" layer="96">&gt;VALUE</text>
 <pin name="2" x="2.54" y="-2.54" visible="off" length="short" direction="pas" rot="R90"/>
 <pin name="1" x="0" y="-2.54" visible="off" length="short" direction="pas" rot="R90"/>
+</symbol>
+<symbol name="STAND-OFF">
+<circle x="0" y="0" radius="1.27" width="0.254" layer="94"/>
 </symbol>
 </symbols>
 <devicesets>
@@ -3205,6 +3228,25 @@ Spark Fun Electronics SKU : Comp-Buzzer</description>
 <connect gate="G$1" pin="1" pad="+"/>
 <connect gate="G$1" pin="2" pad="-"/>
 </connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="STAND-OFF" prefix="JP">
+<description>&lt;b&gt;#4 Stand Off&lt;/b&gt;&lt;p&gt;
+This is the mechanical footprint for a #4 phillips button head screw. Use the keepout ring to avoid running the screw head into surrounding components. SKU : PRT-00447</description>
+<gates>
+<gate name="G$1" symbol="STAND-OFF" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="STAND-OFF">
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="TIGHT" package="STAND-OFF-TIGHT">
 <technologies>
 <technology name=""/>
 </technologies>
@@ -4133,8 +4175,8 @@ Basic schematic elements and footprints for 0603, 1206, and PTH resistors.</desc
 </package>
 <package name="RADIAL-100">
 <description>Tilt swich package</description>
-<pad name="1" x="0" y="0" drill="0.8"/>
-<pad name="2" x="2.54" y="0" drill="0.8"/>
+<pad name="1" x="0" y="0" drill="0.8" diameter="1.8288"/>
+<pad name="2" x="2.54" y="0" drill="0.8" diameter="1.8288"/>
 <circle x="0" y="0" radius="1.79605" width="0.127" layer="21"/>
 <text x="-2.54" y="2.54" size="1.27" layer="25">&gt;NAME</text>
 <text x="-2.54" y="-3.81" size="1.27" layer="27">&gt;VALUE</text>
@@ -4194,7 +4236,8 @@ Basic schematic elements and footprints for 0603, 1206, and PTH resistors.</desc
 <circle x="-1.905" y="0" radius="0.635" width="0.254" layer="94"/>
 <circle x="1.905" y="0" radius="0.635" width="0.254" layer="94"/>
 <circle x="0" y="0" radius="3.175" width="0.254" layer="94"/>
-<text x="-2.54" y="-5.08" size="1.27" layer="95">&gt;NAME</text>
+<text x="-2.54" y="-5.08" size="1.778" layer="95">&gt;NAME</text>
+<text x="-2.54" y="-7.62" size="1.778" layer="96">&gt;value</text>
 </symbol>
 </symbols>
 <devicesets>
@@ -4646,7 +4689,11 @@ Through-hole photocell (http://www.sparkfun.com/products/9088)&lt;br&gt;
 <variantdefs>
 </variantdefs>
 <classes>
-<class number="0" name="default" width="0" drill="0">
+<class number="0" name="default" width="0.3048" drill="0.2032">
+<clearance class="0" value="0.2032"/>
+</class>
+<class number="1" name="power" width="0.4064" drill="0.2032">
+<clearance class="1" value="0.2032"/>
 </class>
 </classes>
 <parts>
@@ -4691,11 +4738,13 @@ Through-hole photocell (http://www.sparkfun.com/products/9088)&lt;br&gt;
 <part name="Q1" library="SparkFun-DiscreteSemi" deviceset="TRANSISTOR_NPN" device="TO-92-AMMO" value="2N2222"/>
 <part name="P+7" library="SparkFun-Aesthetics" deviceset="VCC" device=""/>
 <part name="GND10" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
-<part name="S2" library="jb-eagle" deviceset="TILTSWITCH" device=""/>
 <part name="GND11" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="R9" library="SparkFun-Passives" deviceset="RESISTOR" device="AXIAL-0.3" value="330"/>
 <part name="LED2" library="SparkFun-LED" deviceset="LED" device="3MM" value="red"/>
 <part name="GND12" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
+<part name="S2" library="jb-eagle" deviceset="TILTSWITCH" device="" value="tilt"/>
+<part name="JP4" library="SparkFun-Electromechanical" deviceset="STAND-OFF" device=""/>
+<part name="JP5" library="SparkFun-Electromechanical" deviceset="STAND-OFF" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -4746,16 +4795,18 @@ Through-hole photocell (http://www.sparkfun.com/products/9088)&lt;br&gt;
 <instance part="Q1" gate="G$1" x="175.26" y="91.44"/>
 <instance part="P+7" gate="1" x="177.8" y="119.38"/>
 <instance part="GND10" gate="1" x="177.8" y="81.28"/>
-<instance part="S2" gate="G$1" x="152.4" y="81.28" rot="R270"/>
 <instance part="GND11" gate="1" x="152.4" y="71.12"/>
 <instance part="R9" gate="G$1" x="139.7" y="81.28" rot="R90"/>
 <instance part="LED2" gate="G$1" x="139.7" y="71.12"/>
 <instance part="GND12" gate="1" x="139.7" y="60.96"/>
+<instance part="S2" gate="G$1" x="152.4" y="81.28" rot="R90"/>
+<instance part="JP4" gate="G$1" x="104.14" y="-5.08"/>
+<instance part="JP5" gate="G$1" x="109.22" y="-5.08"/>
 </instances>
 <busses>
 </busses>
 <nets>
-<net name="GND" class="0">
+<net name="GND" class="1">
 <segment>
 <pinref part="JP1" gate="G$1" pin="2"/>
 <pinref part="GND1" gate="1" pin="GND"/>
@@ -4829,9 +4880,9 @@ Through-hole photocell (http://www.sparkfun.com/products/9088)&lt;br&gt;
 <wire x1="177.8" y1="86.36" x2="177.8" y2="83.82" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="S2" gate="G$1" pin="2"/>
 <pinref part="GND11" gate="1" pin="GND"/>
 <wire x1="152.4" y1="76.2" x2="152.4" y2="73.66" width="0.1524" layer="91"/>
+<pinref part="S2" gate="G$1" pin="1"/>
 </segment>
 <segment>
 <pinref part="LED2" gate="G$1" pin="C"/>
@@ -4839,14 +4890,19 @@ Through-hole photocell (http://www.sparkfun.com/products/9088)&lt;br&gt;
 <wire x1="139.7" y1="66.04" x2="139.7" y2="63.5" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="N$1" class="0">
+<net name="N$1" class="1">
 <segment>
 <pinref part="JP1" gate="G$1" pin="1"/>
 <pinref part="S1" gate="1" pin="P"/>
 <wire x1="-5.08" y1="22.86" x2="2.54" y2="22.86" width="0.1524" layer="91"/>
+<pinref part="S1" gate="1" pin="S"/>
+<wire x1="10.16" y1="20.32" x2="10.16" y2="17.78" width="0.1524" layer="91"/>
+<wire x1="10.16" y1="17.78" x2="2.54" y2="17.78" width="0.1524" layer="91"/>
+<wire x1="2.54" y1="17.78" x2="2.54" y2="22.86" width="0.1524" layer="91"/>
+<junction x="2.54" y="22.86"/>
 </segment>
 </net>
-<net name="N$2" class="0">
+<net name="N$2" class="1">
 <segment>
 <pinref part="S1" gate="1" pin="O"/>
 <pinref part="D1" gate="G$1" pin="A"/>
@@ -4860,7 +4916,7 @@ Through-hole photocell (http://www.sparkfun.com/products/9088)&lt;br&gt;
 <wire x1="76.2" y1="10.16" x2="76.2" y2="12.7" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="V_IN" class="0">
+<net name="V_IN" class="1">
 <segment>
 <pinref part="D1" gate="G$1" pin="C"/>
 <pinref part="U1" gate="G$1" pin="IN"/>
@@ -5057,9 +5113,9 @@ Through-hole photocell (http://www.sparkfun.com/products/9088)&lt;br&gt;
 <net name="N$12" class="0">
 <segment>
 <pinref part="U2" gate="G$1" pin="A0"/>
-<pinref part="S2" gate="G$1" pin="1"/>
 <wire x1="114.3" y1="88.9" x2="152.4" y2="88.9" width="0.1524" layer="91"/>
 <wire x1="152.4" y1="88.9" x2="152.4" y2="86.36" width="0.1524" layer="91"/>
+<pinref part="S2" gate="G$1" pin="2"/>
 </segment>
 </net>
 <net name="N$13" class="0">
