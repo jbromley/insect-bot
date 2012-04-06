@@ -4689,11 +4689,11 @@ Through-hole photocell (http://www.sparkfun.com/products/9088)&lt;br&gt;
 <variantdefs>
 </variantdefs>
 <classes>
-<class number="0" name="default" width="0.3048" drill="0.2032">
-<clearance class="0" value="0.2032"/>
+<class number="0" name="default" width="0.6096" drill="0.2032">
+<clearance class="0" value="0.4064"/>
 </class>
-<class number="1" name="power" width="0.4064" drill="0.2032">
-<clearance class="1" value="0.2032"/>
+<class number="1" name="power" width="0.8128" drill="0.2032">
+<clearance class="1" value="0.4064"/>
 </class>
 </classes>
 <parts>
@@ -4939,7 +4939,7 @@ Through-hole photocell (http://www.sparkfun.com/products/9088)&lt;br&gt;
 <label x="86.36" y="53.34" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="VCC" class="0">
+<net name="VCC" class="1">
 <segment>
 <pinref part="R1" gate="G$1" pin="2"/>
 <pinref part="P+1" gate="1" pin="VCC"/>
