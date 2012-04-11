@@ -4160,19 +4160,6 @@ Basic schematic elements and footprints for 0603, 1206, and PTH resistors.</desc
 <text x="3.175" y="1.905" size="0.4064" layer="25" ratio="10">&gt;NAME</text>
 <text x="3.175" y="-1.905" size="0.4064" layer="27" ratio="10">&gt;VALUE</text>
 </package>
-<package name="AX-1838">
-<description>AX-1838 Infrared Receiver</description>
-<pad name="OUT" x="0" y="2.54" drill="0.8" shape="square"/>
-<pad name="GND" x="0" y="0" drill="0.8"/>
-<pad name="VCC" x="0" y="-2.54" drill="0.8"/>
-<wire x1="-2.2606" y1="3.302" x2="-2.2606" y2="-3.302" width="0.127" layer="21"/>
-<wire x1="-2.2606" y1="-3.302" x2="2.2606" y2="-3.302" width="0.127" layer="21"/>
-<wire x1="2.2606" y1="-3.302" x2="2.2606" y2="3.302" width="0.127" layer="21"/>
-<wire x1="2.2606" y1="3.302" x2="-2.2606" y2="3.302" width="0.127" layer="21"/>
-<wire x1="-2.54" y1="-2.54" x2="-2.54" y2="2.54" width="0.127" layer="21" curve="-126.869898"/>
-<text x="-2.54" y="3.81" size="1.27" layer="25">G$1</text>
-<text x="-2.54" y="-5.08" size="1.27" layer="27">&gt;value</text>
-</package>
 <package name="RADIAL-100">
 <description>Tilt swich package</description>
 <pad name="1" x="0" y="0" drill="0.8" diameter="1.8288"/>
@@ -4180,6 +4167,19 @@ Basic schematic elements and footprints for 0603, 1206, and PTH resistors.</desc
 <circle x="0" y="0" radius="1.79605" width="0.127" layer="21"/>
 <text x="-2.54" y="2.54" size="1.27" layer="25">&gt;NAME</text>
 <text x="-2.54" y="-3.81" size="1.27" layer="27">&gt;VALUE</text>
+</package>
+<package name="AX-1838">
+<description>AX-1838 Infrared Receiver</description>
+<pad name="OUT" x="0" y="2.54" drill="0.8128" diameter="1.9304" shape="square"/>
+<pad name="GND" x="0" y="0" drill="0.8128" diameter="1.9304"/>
+<pad name="VCC" x="0" y="-2.54" drill="0.8128" diameter="1.9304"/>
+<wire x1="-2.2606" y1="3.302" x2="-2.2606" y2="-3.302" width="0.127" layer="21"/>
+<wire x1="-2.2606" y1="-3.302" x2="2.2606" y2="-3.302" width="0.127" layer="21"/>
+<wire x1="2.2606" y1="-3.302" x2="2.2606" y2="3.302" width="0.127" layer="21"/>
+<wire x1="2.2606" y1="3.302" x2="-2.2606" y2="3.302" width="0.127" layer="21"/>
+<wire x1="-2.54" y1="-2.54" x2="-2.54" y2="2.54" width="0.127" layer="21" curve="-126.869898"/>
+<text x="-2.54" y="3.81" size="1.27" layer="25">G$1</text>
+<text x="-2.54" y="-5.08" size="1.27" layer="27">&gt;value</text>
 </package>
 </packages>
 <symbols>
@@ -4193,6 +4193,20 @@ Basic schematic elements and footprints for 0603, 1206, and PTH resistors.</desc
 <pin name="OUT" x="12.7" y="2.54" visible="pin" length="middle" direction="sup" rot="R180"/>
 <text x="-3.81" y="8.89" size="1.778" layer="95">&gt;Name</text>
 <text x="-3.81" y="6.35" size="1.778" layer="96">&gt;value</text>
+</symbol>
+<symbol name="TILTSWITCH">
+<description>Rolling ball sensor, normally open</description>
+<pin name="1" x="-5.08" y="0" visible="pin" length="short" direction="pas"/>
+<pin name="2" x="5.08" y="0" visible="pin" length="short" direction="pas" rot="R180"/>
+<wire x1="-1.905" y1="1.27" x2="1.905" y2="1.27" width="0.254" layer="94"/>
+<circle x="0" y="1.905" radius="0.635" width="0.254" layer="94"/>
+<wire x1="-3.175" y1="0" x2="-2.54" y2="0" width="0.254" layer="94"/>
+<wire x1="2.54" y1="0" x2="3.175" y2="0" width="0.254" layer="94"/>
+<circle x="-1.905" y="0" radius="0.635" width="0.254" layer="94"/>
+<circle x="1.905" y="0" radius="0.635" width="0.254" layer="94"/>
+<circle x="0" y="0" radius="3.175" width="0.254" layer="94"/>
+<text x="-2.54" y="-5.08" size="1.778" layer="95">&gt;NAME</text>
+<text x="-2.54" y="-7.62" size="1.778" layer="96">&gt;value</text>
 </symbol>
 <symbol name="AX-1838">
 <description>AX-1838 Infrared Receiver</description>
@@ -4225,20 +4239,6 @@ Basic schematic elements and footprints for 0603, 1206, and PTH resistors.</desc
 <vertex x="-3.175" y="1.905"/>
 </polygon>
 </symbol>
-<symbol name="TILTSWITCH">
-<description>Rolling ball sensor, normally open</description>
-<pin name="1" x="-5.08" y="0" visible="pin" length="short" direction="pas"/>
-<pin name="2" x="5.08" y="0" visible="pin" length="short" direction="pas" rot="R180"/>
-<wire x1="-1.905" y1="1.27" x2="1.905" y2="1.27" width="0.254" layer="94"/>
-<circle x="0" y="1.905" radius="0.635" width="0.254" layer="94"/>
-<wire x1="-3.175" y1="0" x2="-2.54" y2="0" width="0.254" layer="94"/>
-<wire x1="2.54" y1="0" x2="3.175" y2="0" width="0.254" layer="94"/>
-<circle x="-1.905" y="0" radius="0.635" width="0.254" layer="94"/>
-<circle x="1.905" y="0" radius="0.635" width="0.254" layer="94"/>
-<circle x="0" y="0" radius="3.175" width="0.254" layer="94"/>
-<text x="-2.54" y="-5.08" size="1.778" layer="95">&gt;NAME</text>
-<text x="-2.54" y="-7.62" size="1.778" layer="96">&gt;value</text>
-</symbol>
 </symbols>
 <devicesets>
 <deviceset name="L4931-TO92-AMMO" prefix="U">
@@ -4259,6 +4259,23 @@ Basic schematic elements and footprints for 0603, 1206, and PTH resistors.</desc
 </device>
 </devices>
 </deviceset>
+<deviceset name="TILTSWITCH" prefix="S">
+<description>Rolling ball sensor, normally open</description>
+<gates>
+<gate name="G$1" symbol="TILTSWITCH" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="RADIAL-100">
+<connects>
+<connect gate="G$1" pin="1" pad="1"/>
+<connect gate="G$1" pin="2" pad="2"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
 <deviceset name="AX-1838" prefix="IRM">
 <description>AX-1838HS Infrared Receiver
 
@@ -4272,23 +4289,6 @@ The AX-1838HS is a miniaturized infrared receiver for remote control and other a
 <connect gate="G$1" pin="GND" pad="GND"/>
 <connect gate="G$1" pin="OUT" pad="OUT"/>
 <connect gate="G$1" pin="VCC" pad="VCC"/>
-</connects>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-</devices>
-</deviceset>
-<deviceset name="TILTSWITCH" prefix="S">
-<description>Rolling ball sensor, normally open</description>
-<gates>
-<gate name="G$1" symbol="TILTSWITCH" x="0" y="0"/>
-</gates>
-<devices>
-<device name="" package="RADIAL-100">
-<connects>
-<connect gate="G$1" pin="1" pad="1"/>
-<connect gate="G$1" pin="2" pad="2"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -4727,7 +4727,6 @@ Through-hole photocell (http://www.sparkfun.com/products/9088)&lt;br&gt;
 <part name="JP3" library="SparkFun-Connectors" deviceset="M04" device="PTH" value="ultrasonic"/>
 <part name="P+6" library="SparkFun-Aesthetics" deviceset="VCC" device=""/>
 <part name="GND8" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
-<part name="IRM1" library="jb-eagle" deviceset="AX-1838" device=""/>
 <part name="R6" library="SparkFun-Passives" deviceset="RESISTOR" device="AXIAL-0.3" value="47"/>
 <part name="R7" library="SparkFun-Passives" deviceset="RESISTOR" device="AXIAL-0.3" value="10k"/>
 <part name="C3" library="SparkFun-Passives" deviceset="CAP_POL" device="PTH1" value="47uF"/>
@@ -4745,6 +4744,7 @@ Through-hole photocell (http://www.sparkfun.com/products/9088)&lt;br&gt;
 <part name="S2" library="jb-eagle" deviceset="TILTSWITCH" device="" value="tilt"/>
 <part name="JP4" library="SparkFun-Electromechanical" deviceset="STAND-OFF" device=""/>
 <part name="JP5" library="SparkFun-Electromechanical" deviceset="STAND-OFF" device=""/>
+<part name="IRM1" library="jb-eagle" deviceset="AX-1838" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -4779,12 +4779,11 @@ Through-hole photocell (http://www.sparkfun.com/products/9088)&lt;br&gt;
 <instance part="R5" gate="G$1" x="154.94" y="106.68" rot="R90"/>
 <instance part="GND5" gate="1" x="139.7" y="99.06"/>
 <instance part="GND6" gate="1" x="154.94" y="96.52"/>
-<instance part="GND7" gate="1" x="76.2" y="-2.54"/>
+<instance part="GND7" gate="1" x="76.2" y="-5.08"/>
 <instance part="P+5" gate="1" x="60.96" y="33.02"/>
 <instance part="JP3" gate="G$1" x="99.06" y="147.32" rot="R270"/>
 <instance part="P+6" gate="1" x="86.36" y="144.78"/>
 <instance part="GND8" gate="1" x="111.76" y="134.62"/>
-<instance part="IRM1" gate="G$1" x="35.56" y="86.36"/>
 <instance part="R6" gate="G$1" x="60.96" y="91.44"/>
 <instance part="R7" gate="G$1" x="68.58" y="86.36" rot="R90"/>
 <instance part="C3" gate="G$1" x="53.34" y="81.28"/>
@@ -4802,6 +4801,7 @@ Through-hole photocell (http://www.sparkfun.com/products/9088)&lt;br&gt;
 <instance part="S2" gate="G$1" x="152.4" y="81.28" rot="R90"/>
 <instance part="JP4" gate="G$1" x="104.14" y="-5.08"/>
 <instance part="JP5" gate="G$1" x="109.22" y="-5.08"/>
+<instance part="IRM1" gate="G$1" x="35.56" y="86.36"/>
 </instances>
 <busses>
 </busses>
@@ -4853,11 +4853,6 @@ Through-hole photocell (http://www.sparkfun.com/products/9088)&lt;br&gt;
 <wire x1="154.94" y1="101.6" x2="154.94" y2="99.06" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="LED1" gate="G$1" pin="C"/>
-<wire x1="76.2" y1="2.54" x2="76.2" y2="0" width="0.1524" layer="91"/>
-<pinref part="GND7" gate="1" pin="GND"/>
-</segment>
-<segment>
 <pinref part="JP3" gate="G$1" pin="4"/>
 <wire x1="104.14" y1="142.24" x2="104.14" y2="139.7" width="0.1524" layer="91"/>
 <pinref part="GND8" gate="1" pin="GND"/>
@@ -4865,7 +4860,6 @@ Through-hole photocell (http://www.sparkfun.com/products/9088)&lt;br&gt;
 <wire x1="111.76" y1="139.7" x2="111.76" y2="137.16" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="IRM1" gate="G$1" pin="GND"/>
 <wire x1="45.72" y1="81.28" x2="48.26" y2="81.28" width="0.1524" layer="91"/>
 <wire x1="48.26" y1="81.28" x2="48.26" y2="76.2" width="0.1524" layer="91"/>
 <pinref part="C3" gate="G$1" pin="-"/>
@@ -4873,6 +4867,7 @@ Through-hole photocell (http://www.sparkfun.com/products/9088)&lt;br&gt;
 <pinref part="GND9" gate="1" pin="GND"/>
 <wire x1="53.34" y1="76.2" x2="53.34" y2="73.66" width="0.1524" layer="91"/>
 <junction x="53.34" y="76.2"/>
+<pinref part="IRM1" gate="G$1" pin="GND"/>
 </segment>
 <segment>
 <pinref part="Q1" gate="G$1" pin="E"/>
@@ -4888,6 +4883,11 @@ Through-hole photocell (http://www.sparkfun.com/products/9088)&lt;br&gt;
 <pinref part="LED2" gate="G$1" pin="C"/>
 <pinref part="GND12" gate="1" pin="GND"/>
 <wire x1="139.7" y1="66.04" x2="139.7" y2="63.5" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="LED1" gate="G$1" pin="C"/>
+<pinref part="GND7" gate="1" pin="GND"/>
+<wire x1="76.2" y1="2.54" x2="76.2" y2="-2.54" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$1" class="1">
@@ -4978,15 +4978,6 @@ Through-hole photocell (http://www.sparkfun.com/products/9088)&lt;br&gt;
 <wire x1="86.36" y1="137.16" x2="86.36" y2="144.78" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="IRM1" gate="G$1" pin="VCC"/>
-<pinref part="C3" gate="G$1" pin="+"/>
-<wire x1="45.72" y1="91.44" x2="53.34" y2="91.44" width="0.1524" layer="91"/>
-<wire x1="53.34" y1="91.44" x2="53.34" y2="83.82" width="0.1524" layer="91"/>
-<pinref part="R6" gate="G$1" pin="1"/>
-<wire x1="53.34" y1="91.44" x2="55.88" y2="91.44" width="0.1524" layer="91"/>
-<junction x="53.34" y="91.44"/>
-</segment>
-<segment>
 <pinref part="P+7" gate="1" pin="VCC"/>
 <pinref part="SG1" gate="G$1" pin="1"/>
 <wire x1="177.8" y1="119.38" x2="177.8" y2="114.3" width="0.1524" layer="91"/>
@@ -4995,6 +4986,15 @@ Through-hole photocell (http://www.sparkfun.com/products/9088)&lt;br&gt;
 <wire x1="172.72" y1="111.76" x2="172.72" y2="114.3" width="0.1524" layer="91"/>
 <wire x1="172.72" y1="114.3" x2="177.8" y2="114.3" width="0.1524" layer="91"/>
 <junction x="177.8" y="114.3"/>
+</segment>
+<segment>
+<pinref part="C3" gate="G$1" pin="+"/>
+<wire x1="45.72" y1="91.44" x2="53.34" y2="91.44" width="0.1524" layer="91"/>
+<wire x1="53.34" y1="91.44" x2="53.34" y2="83.82" width="0.1524" layer="91"/>
+<pinref part="R6" gate="G$1" pin="1"/>
+<wire x1="53.34" y1="91.44" x2="55.88" y2="91.44" width="0.1524" layer="91"/>
+<junction x="53.34" y="91.44"/>
+<pinref part="IRM1" gate="G$1" pin="VCC"/>
 </segment>
 </net>
 <net name="N$4" class="0">
@@ -5077,11 +5077,11 @@ Through-hole photocell (http://www.sparkfun.com/products/9088)&lt;br&gt;
 </net>
 <net name="REMOTE" class="0">
 <segment>
-<pinref part="IRM1" gate="G$1" pin="OUT"/>
 <wire x1="45.72" y1="86.36" x2="60.96" y2="86.36" width="0.1524" layer="91"/>
 <wire x1="60.96" y1="86.36" x2="60.96" y2="81.28" width="0.1524" layer="91"/>
 <pinref part="R7" gate="G$1" pin="1"/>
 <wire x1="60.96" y1="81.28" x2="68.58" y2="81.28" width="0.1524" layer="91"/>
+<pinref part="IRM1" gate="G$1" pin="OUT"/>
 </segment>
 </net>
 <net name="N$10" class="0">
