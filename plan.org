@@ -60,7 +60,22 @@ respond to sound, provide sound feedback, and be remote controlled.
    deactivated when the shield is not attached.
  - Use a LiPo battery with a charging circuit.
 
-* Project Plan [9/39]
+* Project Plan [15/48]
+
+** Board Test
+Test all components on the board to ensure their proper functioning before
+trying to program all of the behaviors.
+*** DONE Power supply circuit. [3/3]
+    - State "DONE"       from "TODO"       [2012-04-25 Wed 21:45]
+    - [X] Power switch
+    - [X] LED
+    - [X] Supply voltage - 5.02 V.
+*** TODO Ultrasonic sensor.
+*** TODO Light sensors.
+*** TODO Buzzer.
+*** TODO IR receiver.
+*** TODO Tilt switch.
+*** TODO Servo control pins.
 
 ** Walking
 *** IN_PROGRESS Walk straight forward with less than 5% error.
@@ -99,7 +114,8 @@ Tested a two photoresistors read by two analog ports. This seems to work
 well enough.
 *** TODO Figure out how to right the robot from its back.
 ** Remote control
-*** TODO Remote control test sketch.
+ ddfdf Remote control test sketch.
+    - State "DONE"       from "TODO"       [2012-04-11 Wed 01:46]
 *** TODO Implement mode switching in bot.
 ** Sound effects
 *** TODO Develop mapping from actions to sound.
@@ -107,10 +123,11 @@ well enough.
 ** PIR sensor
 ** Stuck detection
 ** Mechanical and electrical
-*** TODO Make brackets for BBB Arduino
+*** TODO Make brackets for circuit board.
 *** TODO Shrink wrap holding portion of brackets.
 *** TODO Fix brackets to body.
-*** TODO Circuit board for final circuitry.
+*** IN_PROGRESS Circuit board for final circuitry.
+    - State "IN_PROGRESS" from "TODO"       [2012-04-11 Wed 01:47]
 I plan to use an Arduino Pro Mini on either a perfboard or a dedicated
 etched PCB for the circuitry.
 *** DONE Design power circuit.
@@ -145,16 +162,26 @@ properly. I will try using the RBBB with the 7805.
     - State "CANCELED"   from "TODO"       [2012-03-05 Mon 22:08]
       I ended up not doing this because putting on female headers would obscure
       the labels for all the pins and so make it difficult to hook up any circuits.
-*** TODO Make a servo connection block.
-The servo connection block is a 2x3 block of male header pins. There are two
-pins for Vcc, two pins for ground, and a control pin for each servo.
-*** TODO Build power circuit
+*** DONE Make a servo connection block.
+    - State "DONE"       from "TODO"       [2012-04-11 Wed 01:45]
+I am using a 6-pin header for this.
+*** CANCELED Build power circuit
+    - State "CANCELED"   from "TODO"       [2012-04-11 Wed 01:46] \\
+      The power circuit has been moved to the main circuit board.
 *** TODO Investigate isolating servos from microcontroller.
 *** TODO Cut down servo cables to only length necessary to reach control board.
 *** TODO Make the feet stickier.
 Currently the feet do not grip at all, slipping even on carpet. I need to
 find a way (hot glue? building feet?) to have the feet get better traction.
-*** TODO Bend PVC into a circuit board holder.
+*** DONE Bend PVC into a circuit board holder.
+    - State "DONE"       from "TODO"       [2012-04-14 Sat 23:10]
+I will just mount the board to a piece of Sintel with a set of risers.
 *** TODO Make a flat plastic sheet out of polystyrene.
 *** TODO Form polystyrene sheet into a circuit board holder.
-
+*** TODO Attach battery holders to body.
+I am using six 1.2 NiCad batteries to provide energy. The battery holders
+for these need to be attached to the body and wired together.
+*** DONE Drill holes in circuit board.
+    - State "DONE"       from "TODO"       [2012-04-14 Sat 23:10]
+*** DONE Place components on circuit board.
+    - State "DONE"       from "TODO"       [2012-04-25 Wed 21:35]
