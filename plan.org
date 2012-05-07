@@ -60,7 +60,7 @@ respond to sound, provide sound feedback, and be remote controlled.
    deactivated when the shield is not attached.
  - Use a LiPo battery with a charging circuit.
 
-* Project Plan [15/48]
+* Project Plan [18/48]
 
 ** Board Test
 Test all components on the board to ensure their proper functioning before
@@ -70,10 +70,15 @@ trying to program all of the behaviors.
     - [X] Power switch
     - [X] LED
     - [X] Supply voltage - 5.02 V.
-*** TODO Ultrasonic sensor.
-*** TODO Light sensors.
-*** TODO Buzzer.
+*** DONE Ultrasonic sensor.
+    - State "DONE"       from "TODO"       [2012-04-26 Thu 23:29]
+*** DONE Light sensors.
+    - State "DONE"       from "TODO"       [2012-04-25 Wed 22:59]
+*** DONE Buzzer.
+    - State "DONE"       from "TODO"       [2012-04-26 Thu 01:14]
 *** TODO IR receiver.
+The IR receiver is incorrectly connected. May be able to fix it by cutting
+two traces and adding three jumpers.
 *** TODO Tilt switch.
 *** TODO Servo control pins.
 
