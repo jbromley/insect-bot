@@ -3,6 +3,7 @@
 ARDUINO_DIR = /Applications/Arduino.app/Contents/Resources/Java
 BOARD_TAG = atmega328
 ARDUINO_PORT = /dev/tty.usbserial-*
-ARDUINO_LIBS = Servo IRremote
+ARDUINO_LIBS = Bounce
+# ARDUINO_LIBS = Bounce # Servo IRremote
 
 include ../Arduino.mk

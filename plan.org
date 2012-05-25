@@ -60,7 +60,27 @@ respond to sound, provide sound feedback, and be remote controlled.
    deactivated when the shield is not attached.
  - Use a LiPo battery with a charging circuit.
 
-* Project Plan
+* Project Plan [18/48]
+
+** Board Test
+Test all components on the board to ensure their proper functioning before
+trying to program all of the behaviors.
+*** DONE Power supply circuit. [3/3]
+    - State "DONE"       from "TODO"       [2012-04-25 Wed 21:45]
+    - [X] Power switch
+    - [X] LED
+    - [X] Supply voltage - 5.02 V.
+*** DONE Ultrasonic sensor.
+    - State "DONE"       from "TODO"       [2012-04-26 Thu 23:29]
+*** DONE Light sensors.
+    - State "DONE"       from "TODO"       [2012-04-25 Wed 22:59]
+*** DONE Buzzer.
+    - State "DONE"       from "TODO"       [2012-04-26 Thu 01:14]
+*** TODO IR receiver.
+The IR receiver is incorrectly connected. May be able to fix it by cutting
+two traces and adding three jumpers.
+*** TODO Tilt switch.
+*** TODO Servo control pins.
 
 ** Walking
 *** IN_PROGRESS Walk straight forward with less than 5% error.
@@ -75,15 +95,32 @@ respond to sound, provide sound feedback, and be remote controlled.
 *** TODO Mount ultrasonic sensor.
 *** TODO Make connection cable for sensor.
 *** TODO Add object-avoidance code.
+*** TODO Find sensor with most accurate response.
 ** Light avoidance/seeking
-*** TODO Test an analog subtraction circuit.
-*** TODO A digital comparison circuit based on a comparator.
+*** CANCELED [#C] Test an analog subtraction circuit.
+    - State "CANCELED"   from "TODO"       [2012-03-13 Tue 01:32] \\
+      Instead of doing light subtraction in hardware I will just use the analog 
+      ports and do the comparison digitally.
+*** CANCELED [#C] A digital comparison circuit based on a comparator.
+    - State "CANCELED"   from "TODO"       [2012-03-13 Tue 01:32] \\
+      Decided to not use a comparator to determine light direction.
+*** DONE Test simple two photoresistor set up.
+    - State "DONE"       from "TODO"       [2012-03-09 Fri 01:03]
+Tested two photoresistors connected to Arduino analog inputs. This
+configuration seems to work well enough, though the dynamic range of the
+response is limited.
 *** TODO Develop light-seeking/avoidance policy.
 *** TODO Implement light-responsive behavior.
 ** Touch sensors
 ** Tilt sensor and self-righting
+*** DONE Test tilt sensors
+    - State "DONE"       from "TODO"       [2012-03-13 Tue 01:34]
+Tested a two photoresistors read by two analog ports. This seems to work
+well enough.
+*** TODO Figure out how to right the robot from its back.
 ** Remote control
-*** TODO Remote control test sketch.
+ ddfdf Remote control test sketch.
+    - State "DONE"       from "TODO"       [2012-04-11 Wed 01:46]
 *** TODO Implement mode switching in bot.
 ** Sound effects
 *** TODO Develop mapping from actions to sound.
@@ -91,14 +128,15 @@ respond to sound, provide sound feedback, and be remote controlled.
 ** PIR sensor
 ** Stuck detection
 ** Mechanical and electrical
-*** TODO Make brackets for BBB Arduino
+*** TODO Make brackets for circuit board.
 *** TODO Shrink wrap holding portion of brackets.
 *** TODO Fix brackets to body.
-*** TODO Circuit board for final circuitry.
+*** IN_PROGRESS Circuit board for final circuitry.
+    - State "IN_PROGRESS" from "TODO"       [2012-04-11 Wed 01:47]
 I plan to use an Arduino Pro Mini on either a perfboard or a dedicated
 etched PCB for the circuitry.
 *** DONE Design power circuit.
-    - State "DONE"       from "TODO"       [2012-02-24 Fri 16:48]
+    - State "DONE"       from "TODO"       [2012-03-16 Fri 00:57]
 I am modeling my circuit after SparkFun's [[http://www.sparkfun.com/products/114][Breadboard power supply]]. I
 should be able to eliminate the power jack and voltage-setting resistors
 and use a 7805 instead of the LM317.
@@ -106,11 +144,49 @@ and use a 7805 instead of the LM317.
 Further testing shows that the 2.5V dropout of the 7805 is not good for use
 with a 9V battery. It would be better to use the L4931 LDO regulator. I will
 have to check the current draw of the bot and solder an L4931 into the BBB.
-*** TODO Measure current draw of the bot.
-*** TODO Replace BBB 7805 with original L4931.
-*** TODO Build power circuit
+
+I have decided to use 6 AA rechargeables to provide 7.2V. A diode will drop
+this to 6.1V for direct use by the servos. The 6.1V will be fed to a LDO
+regulator to drive the Arduino and other circuitry.
+*** DONE Measure current draw of the bot.
+    - State "DONE"       from "TODO"       [2012-03-05 Mon 22:24]
+I check the bot with the normal speed gait and found it to use between 370
+and 580 mA of current. The L4931 can only deliver 250 mA so it is not a
+viable choice for a voltage regulator. This test was done with the DC
+adapter set to provide 9V in. It nominally provides 9.13 V open-circuit and
+8.38 V to 8.98 V loaded.
+*** DONE Replace BBB 7805 with original L4931.
+    - State "DONE"       from "TODO"       [2012-03-01 Thu 22:00]
+I swapped out the 7805 for the L4931 that came with the BBB, hoping the
+lower dropout voltage would give better performance but it appears the L4931
+cannot source enough current (only up to 250 mA) for the robot to work
+properly. I will try using the RBBB with the 7805.
+*** DONE Place straight programming pins on the RBBB.
+    - State "DONE"       from "TODO"       [2012-03-05 Mon 22:07]
+*** CANCELED Place female header blocks on the RBBB.
+    - State "CANCELED"   from "TODO"       [2012-03-05 Mon 22:08]
+      I ended up not doing this because putting on female headers would obscure
+      the labels for all the pins and so make it difficult to hook up any circuits.
+*** DONE Make a servo connection block.
+    - State "DONE"       from "TODO"       [2012-04-11 Wed 01:45]
+I am using a 6-pin header for this.
+*** CANCELED Build power circuit
+    - State "CANCELED"   from "TODO"       [2012-04-11 Wed 01:46] \\
+      The power circuit has been moved to the main circuit board.
 *** TODO Investigate isolating servos from microcontroller.
 *** TODO Cut down servo cables to only length necessary to reach control board.
 *** TODO Make the feet stickier.
 Currently the feet do not grip at all, slipping even on carpet. I need to
 find a way (hot glue? building feet?) to have the feet get better traction.
+*** DONE Bend PVC into a circuit board holder.
+    - State "DONE"       from "TODO"       [2012-04-14 Sat 23:10]
+I will just mount the board to a piece of Sintel with a set of risers.
+*** TODO Make a flat plastic sheet out of polystyrene.
+*** TODO Form polystyrene sheet into a circuit board holder.
+*** TODO Attach battery holders to body.
+I am using six 1.2 NiCad batteries to provide energy. The battery holders
+for these need to be attached to the body and wired together.
+*** DONE Drill holes in circuit board.
+    - State "DONE"       from "TODO"       [2012-04-14 Sat 23:10]
+*** DONE Place components on circuit board.
+    - State "DONE"       from "TODO"       [2012-04-25 Wed 21:35]
